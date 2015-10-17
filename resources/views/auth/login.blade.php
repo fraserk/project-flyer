@@ -1,0 +1,30 @@
+@extends('layouts.master')
+
+@section('title', 'Login')
+
+@section('content')
+    @include('partials._errors')
+
+    <div class="col-md-6 col-md-offset-3">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h2 class="panel-title">Login</h2>
+            </div>
+            <div class="panel-body">
+                {!! Form::open() !!}
+                <div class="form-group">
+                    {!! Form::label('email', 'Email') !!}
+                    {!! Form::email('email', null, [ 'class' => 'form-control', 'placeholder' => 'Email' ]) !!}
+                </div>
+                <div class="form-group">
+                    {!! Form::label('password', 'Password') !!}
+                    {!! Form::password('password', [ 'class' => 'form-control', 'placeholder' => 'Password' ]) !!}
+                </div>
+                <div class="form-group">
+                    {!! Form::submit('Login', [ 'class' => 'btn btn-primary' ]) !!}
+                </div>
+                {!! Form::close() !!}
+            </div>
+        </div>
+    </div>
+@stop

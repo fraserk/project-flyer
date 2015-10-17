@@ -12,5 +12,11 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('pages.home');
 });
+
+Route::resource('flyers', 'FlyersController');
+
+Route::controller('auth', 'Auth\AuthController');
+
+Route::controller('password', 'Auth\PasswordController');

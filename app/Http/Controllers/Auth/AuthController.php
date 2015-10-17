@@ -24,9 +24,15 @@ class AuthController extends Controller
     use AuthenticatesAndRegistersUsers, ThrottlesLogins;
 
     /**
+     * Redirect path
+     * @var string
+     */
+    protected $redirectPath = "/";
+
+    /**
      * Create a new authentication controller instance.
      *
-     * @return void
+     * @return mixed
      */
     public function __construct()
     {
